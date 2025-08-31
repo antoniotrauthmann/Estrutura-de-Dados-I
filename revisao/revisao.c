@@ -19,6 +19,7 @@ int carregar_agenda(Agenda agendas[]) {
     int total = 0;
     if (carregar_agenda == NULL) {
         printf("Erro ao abrir arquivo agenda.txt ao inicializar o programa.\n");
+        return 0;
     }
     while (fgets(linha, sizeof(linha), carregar_agenda) != NULL && total < max_contatos) {
         if (sscanf(linha,"%d;%127[^;];%15[^;];%d",&agendas[total].id,agendas[total].nome,agendas[total].telefone,&agendas[total].apagado) == 4) {
